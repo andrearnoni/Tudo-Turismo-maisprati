@@ -19,13 +19,207 @@ font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: "Mynerve", cursive;
+  text-shadow: 4px 4px 6px #000;
+  font-weight: 700;
+  font-size: max(44px, 5.2vw);
+}
+
+h2 {
+  font-family: "Marhey", cursive;
+  text-shadow: 4px 4px 6px #464646;
+  font-weight: 700;
+  font-size: max(20px, 2.8vw);
+}
+
+div.chamada a {
+  font-size: max(16px, 1.8vw);
+  color: #fff;
+  text-decoration: none;
+  padding: 20px 80px;
+  border-radius: 50px;
+  font-weight: 600;
+  background: linear-gradient(
+    rgba(4, 178, 217, 1) 0%,
+    rgba(3, 150, 166, 1) 50%,
+    rgba(4, 157, 217, 1) 100%
+  );
+  display: inline-block;
+  animation-name: HeaderA-moverParaCima;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+  transition: 0.3s ease-in-out;
+}
+
+div.chamada a:hover {
+  opacity: 0.8;
+}
+
 header {
   max-width: 100%;
   height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
-    url("./images/cadeira-praia.jpg");
+    url("./images/cadeira-praia-g.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
+}
+
+header nav#nav-esquerda {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+
+header nav#nav-esquerda div#logo {
+  max-width: 100px;
+  max-height: 120px;
+  margin-left: 5rem;
+}
+
+header nav#nav-esquerda div#logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+header nav#nav-esquerda ul#icone-menu {
+  display: none;
+}
+
+header nav#nav-esquerda ul#icone-menu li {
+  list-style: none;
+}
+
+header nav#nav-esquerda ul#icone-menu ion-icon {
+  font-size: 50px;
+  color: #fff;
+  margin-right: 2rem;
+}
+
+header nav#nav-esquerda ul.menu-principal {
+  margin-left: 5rem;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+header nav#nav-esquerda ul.menu-principal li {
+  list-style: none;
+  margin-right: 2rem;
+}
+
+header nav#nav-esquerda ul.menu-principal li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 110%;
+  text-shadow: 4px 6px 10px #000;
+  padding-bottom: 10px;
+  transition: 0.3s ease-in-out;
+}
+
+header nav#nav-esquerda ul.menu-principal li a:hover {
+  opacity: 0.6;
+  border-bottom: 1px solid #fff;
+}
+
+header div.chamada {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header div.chamada h1 {
+  color: #fff;
+  animation-name: HeaderH1-moverParaDireita;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+header div.chamada h2 {
+  color: #d97a43;
+  margin-bottom: 55px;
+  animation-name: HeaderH2-moverParaEsquerda;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: backwards;
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
+      url("./images/cadeira-praia-m.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
+      url("./images/cadeira-praia-p.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  header nav#nav-esquerda ul.menu-principal li a {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  header nav#nav-esquerda div#logo {
+    margin-left: 1rem;
+  }
+
+  header nav#nav-esquerda {
+    justify-content: space-between;
+  }
+
+  header nav#nav-esquerda ul#icone-menu {
+    display: flex;
+  }
+
+  header nav#nav-esquerda ul#icone-menu li#menuX {
+    display: none;
+  }
+
+  header nav#nav-esquerda ul.menu-principal {
+    flex-direction: column;
+    width: 80%;
+    height: 70vh;
+    background: linear-gradient(
+      rgba(3, 150, 166, 1) 0%,
+      rgba(4, 157, 217, 1) 45%,
+      rgba(4, 178, 217, 1) 100%
+    );
+    padding-top: 0.5rem;
+    position: absolute;
+    top: 7rem;
+    right: 0;
+    z-index: 999;
+    display: none;
+  }
+
+  header nav#nav-esquerda ul.menu-principal li {
+    margin: 0.5rem;
+  }
+
+  header nav#nav-esquerda ul.menu-principal li a {
+    font-size: 120%;
+  }
 }
