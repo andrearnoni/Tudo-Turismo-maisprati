@@ -177,14 +177,58 @@ section.sobre div.sobre-container h2 {
   margin-top: 10px;
 }
 
-@media screen and (max-width: 1200px) {
-  header {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
-      url("./images/cadeira-praia-m.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-  }
+section.viajar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 5px solid #04b2d9;
+  border-bottom: 5px solid #04b2d9;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  background-color: #d97a43;
+}
+
+section.viajar h2 {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  max-width: 950px;
+  text-align: center;
+  color: #fff;
+  font-size: max(22px, 2.8vw);
+}
+
+section.viajar div.viajar-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+section.viajar div.viajar-container div.viajar-texto {
+  max-width: 800px;
+  text-align: left;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+section.viajar div.viajar-container div.viajar-texto p {
+  width: 95%;
+  margin: auto;
+  color: #fff;
+  text-shadow: 2px 2px 5px #181717;
+  font-size: max(16px, 1vw);
+}
+
+section.viajar div.viajar-container div.viajar-img {
+  max-width: 450px;
+}
+
+section.viajar div.viajar-container div.viajar-img img {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -243,5 +287,15 @@ section.sobre div.sobre-container h2 {
 
   header nav#nav-esquerda ul.menu-principal li a {
     font-size: 120%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
+      url("./images/cadeira-praia-m.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
   }
 }
