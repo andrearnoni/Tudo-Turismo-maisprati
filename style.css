@@ -19,6 +19,14 @@ font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
 h1 {
   font-family: "Mynerve", cursive;
   text-shadow: 4px 4px 6px #000;
@@ -61,21 +69,51 @@ div.chamada a:hover {
 header {
   max-width: 100%;
   height: 90vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
-    url("./images/cadeira-praia-g.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   position: relative;
 }
 
+.swiper-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+  z-index: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  z-index: 11;
+}
+
 header nav#nav-esquerda {
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 150px;
+  z-index: 2;
   display: flex;
   flex-flow: row;
   align-items: center;
-  /* justify-content: space-between; */
 }
 
 header nav#nav-esquerda div#logo {
@@ -136,6 +174,10 @@ header div.chamada {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+header div.primeiraChamada {
+  z-index: 10;
 }
 
 header div.chamada h1 {
@@ -259,6 +301,102 @@ section.servicos div.servicos-container {
   align-items: center;
 }
 
+footer {
+  width: 100%;
+  background-color: #f7f7f7;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div.footer-container {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div.footer-container div.logo-footer {
+  width: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+}
+
+footer div.footer-container div.logo-footer img {
+  max-width: 100%;
+}
+
+footer div.footer-container div.footer-info {
+  width: 70%;
+  margin-bottom: 50px;
+  padding-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer div.footer-container div.footer-info nav.nav-footer ul {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+footer div.footer-container div.footer-info nav.nav-footer ul li {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+footer div.footer-container div.footer-info nav.nav-footer ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 110%;
+  transition: 0.3s ease-out;
+}
+
+footer div.footer-container div.footer-info nav.nav-footer ul li a:hover {
+  color: #d97a43;
+}
+
+footer div.footer-container div.footer-info div.formasPagamento {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer div.footer-container div.footer-info div.formasPagamento span {
+  font-family: "Roboto", sans-serif;
+  font-size: max(16px, 1vw);
+  margin-bottom: 15px;
+}
+
+footer
+  div.footer-container
+  div.footer-info
+  div.formasPagamento
+  div.footer-img-formasPagamento {
+  max-width: 340px;
+}
+
+footer
+  div.footer-container
+  div.footer-info
+  div.formasPagamento
+  div.footer-img-formasPagamento
+  img {
+  max-width: 100%;
+}
+
+footer span.autorais {
+  font-size: max(14px, 0.8vw);
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 600px) {
   header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
@@ -266,6 +404,20 @@ section.servicos div.servicos-container {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  footer div.footer-container div.footer-info {
+    width: 95%;
+  }
+
+  footer
+    div.footer-container
+    div.footer-info
+    div.formasPagamento
+    div.footer-img-formasPagamento {
+    max-width: 200px;
   }
 }
 

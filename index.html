@@ -12,6 +12,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link
@@ -21,7 +25,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <header id="home">
       <nav id="nav-esquerda">
         <div id="logo">
           <img src="./images/logo.png" alt="Logo" />
@@ -31,21 +35,30 @@
           <li id="menuX"><ion-icon name="close-outline"></ion-icon></li>
         </ul>
         <ul class="menu-principal">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-          <li><a href="#">Porque viajar é importante?</a></li>
-          <li><a href="#">Serviços</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#viajar">Porque viajar é importante?</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      <div class="chamada">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" style="background-image:url('./images/cadeira-praia-g.jpg');"></div>
+          <div class="swiper-slide" style="background-image:url('./images/estatua-newyork-g.jpg');"></div>
+          <div class="swiper-slide" style="background-image:url('./images/torre.jpg');"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>  
+      <div class="chamada primeiraChamada">
         <h1>Tudo Turismo</h1>
         <h2>Viajar sempre é tudo de bom!</h2>
         <a href="#" target="_blank">QUERO TURISTAR</a>
       </div>
     </header>
     <main>
-      <section class="sobre">
+      <section class="sobre" id="sobre">
         <div class="sobre-container">
           <div class="row">
             <div class="col-lg-4">
@@ -123,7 +136,7 @@
           </div>
         </div>
       </section>
-      <section class="viajar">
+      <section class="viajar" id="viajar">
         <h2>Porque viajar é importante?</h2>
         <div class="viajar-container">
           <div class="viajar-texto">
@@ -150,7 +163,7 @@
           <a href="#" target="_blank">QUERO TURISTAR</a>
         </div>
       </section>
-      <section class="servicos">
+      <section class="servicos" id="servicos">
         <h2>Serviços oferecidos</h2>
         <div class="servicos-container">
           <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -212,30 +225,66 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer id="contato">
+      <div class="footer-container">
+        <div class="logo-footer">
+          <img src="./images/logo.png" alt="Logo">
+        </div>
+        <div class="footer-info">
+          <nav class="nav-footer">
+            <ul class="menu-principal">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#sobre">Sobre</a></li>
+              <li><a href="#viajar">Porque viajar é importante?</a></li>
+              <li><a href="#servicos">Serviços</a></li>
+              <li><a href="#contato">Contato</a></li>
+            </ul>
+          </nav>
+          <div class="formasPagamento">
+            <span>Parcelamos em até 12x</span>
+            <div class="footer-img-formasPagamento">
+              <img src="./images/bandeiras.png" alt="formas de pagamento">
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="autorais">
+        Copyright &#169 André Arnoni. Todos os direitos reservados.
+      </span>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"
       integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA=="
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js"
       integrity="sha512-O5YCLUxCY2OBc4rfpnKUIgE4LGuCiW8CrJ7ty4hvkBAAKUOnlbomEFWd3a6ruRnFvO3LG2wiaGiJ1heOvdppvA=="
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
-
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
     <script src="./script.js"></script>
+    <script>
+      const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        effect: 'fade',
+      });
+    </script>  
   </body>
 </html>
