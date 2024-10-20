@@ -155,6 +155,28 @@ header div.chamada h2 {
   animation-fill-mode: backwards;
 }
 
+section.sobre {
+  max-width: 100%;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+section.sobre div.sobre-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+section.sobre div.sobre-container img {
+  border: 2px solid #d97a43;
+}
+
+section.sobre div.sobre-container h2 {
+  font-size: max(22px, 1.8vw);
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1200px) {
   header {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)),
