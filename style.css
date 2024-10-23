@@ -64,6 +64,7 @@ div.chamada a {
 
 div.chamada a:hover {
   opacity: 0.8;
+  transform: scale(1.1);
 }
 
 header {
@@ -177,7 +178,7 @@ header div.chamada {
 }
 
 header div.primeiraChamada {
-  z-index: 10;
+  z-index: 1;
 }
 
 header div.chamada h1 {
@@ -271,6 +272,7 @@ section.viajar div.viajar-container div.viajar-img {
 
 section.viajar div.viajar-container div.viajar-img img {
   max-width: 100%;
+  border-radius: 8px;
 }
 
 section.servicos {
@@ -297,6 +299,51 @@ section.servicos div.servicos-container {
   width: 90%;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+section.testemunhos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+}
+
+section.testemunhos h2 {
+  margin-top: 40px;
+  margin-bottom: 50px;
+  max-width: 70%;
+  font-size: max(22px, 2.8vw);
+  text-align: center;
+  color: #d97a43;
+}
+
+section.testemunhos div.testemunhos-container {
+  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.estrela {
+  color: gold;
+  font-size: 24px;
+}
+
+.card-testemunho {
+  border: 1px solid #d97a43;
+  border-radius: 5px;
+  margin: 30px 0;
+  padding: 20px;
+}
+
+.centered-aos {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
